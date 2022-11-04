@@ -1,0 +1,4 @@
+pandas
+numpy
+PyQt5==5.15.4
+pyqtgraph==0.12.4
