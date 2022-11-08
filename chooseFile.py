@@ -6,7 +6,7 @@
 #    By: adidion <adidion@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/03 15:41:46 by adidion           #+#    #+#              #
-#    Updated: 2022/11/04 11:15:24 by adidion          ###   ########.fr        #
+#    Updated: 2022/11/08 17:08:56 by adidion          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,26 +15,26 @@ import sys
 
 class ChooseFile(QWidget):
 
+#class constructor
 	def __init__(self):
 		super().__init__()
 		self.title = 'Choose your CSV file.'
-		self.left = 10
-		self.top = 10
-		self.width = 640
-		self.height = 480
 
+#init UI
 	def initUI(self):
 		self.setWindowTitle(self.title)
-		self.setGeometry(self.left, self.top, self.width, self.height)
-
+	#try to open
 		try:
-			r = self.openCvsFile()
+			r = self.openCsvFile()
 		except FileExistsError:
 			sys.exit()
 		return r
 
-	def openCvsFile(self):
+#open CSV
+	def openCsvFile(self):
+		#set display options
 		options = QFileDialog.Options()
+		#filtering the accepted files
 		fileName = QFileDialog.getOpenFileName(self,"Choose a CSV file", "","CSV Files (.csv), *.csv", options=options)
 		if fileName:
 			return fileName[0]
