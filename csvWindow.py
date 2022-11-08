@@ -6,7 +6,7 @@
 #    By: adidion <adidion@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/03 15:41:41 by adidion           #+#    #+#              #
-#    Updated: 2022/11/08 16:01:45 by adidion          ###   ########.fr        #
+#    Updated: 2022/11/08 16:16:42 by adidion          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -116,10 +116,8 @@ class CSVWindow(QtWidgets.QMainWindow):
 				box1.addItem(i)
 
 	#layout for choices
-		layout = QVBoxLayout()
-		layout.addWidget(box1)
-
-		self.button1.setLayout(layout)
+		self.layout.addWidget(box1)
+		self.graphWidget.setLayout(self.layout)
 		
 	#event dealer when clicking on a choice
 		box1.currentTextChanged.connect(self.Y_changed)
@@ -138,9 +136,8 @@ class CSVWindow(QtWidgets.QMainWindow):
 				box1.addItem(i)
 
 	#layout for choices
-		layout = QVBoxLayout()
-		layout.addWidget(box1)
-		self.button2.setLayout(layout)
+		self.layout.addWidget(box1)
+		self.graphWidget.setLayout(self.layout)
 		
 	#event dealer when clicking on a choice
 		box1.currentTextChanged.connect(self.X_changed)
